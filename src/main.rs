@@ -7,6 +7,12 @@ struct Rectangle {
     height: u32,
 }
 
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
 fn main() {
     let mut height = String::new();
     let mut width = String::new();
@@ -42,9 +48,5 @@ fn main() {
         height
     };
 
-    println!("Rectangle area is: {}", area(&rectangle));
-}
-
-fn area(rectangle: &Rectangle) -> u32 {
-    rectangle.width * rectangle.height
+    println!("Rectangle area is: {}", rectangle.area());
 }
